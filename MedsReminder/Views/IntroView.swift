@@ -12,49 +12,52 @@ struct IntroView: View {
     
     @State private var titleOffset = -350.0
     var body: some View {
-        ZStack {
-            Color.specialGreen
-                .ignoresSafeArea()
-            
-            VStack {
-                Spacer()
+        NavigationStack {
+            ZStack {
+                Color.specialGreen
+                    .ignoresSafeArea()
                 
-                Text("Meds\nReminder")
-                    .foregroundStyle(Color.white)
-                    .font(.custom("Helvetica", size: 64, relativeTo: .largeTitle))
-                    .bold()
-                    .offset(x: titleOffset)
-                
-                Spacer()
-                
-                Image("IntroImage")
-                    .resizable()
-                    .scaledToFit()
-                    .padding(.horizontal, 50)
-                
-                Spacer()
-                
-                NavigationLink {
-                    Text("another view")
-                } label: {
-                    Text("Get Started")
-                        .underline()
+                VStack {
+                    Spacer()
+                    
+                    Text("Meds\nReminder")
                         .foregroundStyle(Color.white)
-                        .font(.largeTitle)
+                        .font(.custom("Helvetica", size: 64, relativeTo: .largeTitle))
                         .bold()
+                        .offset(x: titleOffset)
+                    
+                    Spacer()
+                    
+                    Image("IntroImage")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.horizontal, 50)
+                    
+                    Spacer()
+                    
+                    NavigationLink {
+                        TodayView()
+                    } label: {
+                        Text("Get Started")
+                            .underline()
+                            .foregroundStyle(Color.white)
+                            .font(.largeTitle)
+                            .bold()
+
+                    }
+
+
+                    Spacer()
 
                 }
-
-
-                Spacer()
-
             }
-        }
-        .task {
-            withAnimation(.easeInOut(duration: 1.5)) {
-                titleOffset = 0.0
+            .task {
+                withAnimation(.easeInOut(duration: 1.5)) {
+                    titleOffset = 0.0
+                }
+                
             }
-            
+
         }
     }
 }
