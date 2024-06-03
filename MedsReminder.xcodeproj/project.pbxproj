@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0251FF782C0E3519007141B3 /* MedsReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF772C0E3519007141B3 /* MedsReminderApp.swift */; };
-		0251FF7A2C0E3519007141B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF792C0E3519007141B3 /* ContentView.swift */; };
 		0251FF7C2C0E351C007141B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0251FF7B2C0E351C007141B3 /* Assets.xcassets */; };
 		0251FF7F2C0E351C007141B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0251FF7E2C0E351C007141B3 /* Preview Assets.xcassets */; };
+		0251FF892C0E3F3C007141B3 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF882C0E3F3C007141B3 /* IntroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0251FF742C0E3519007141B3 /* MedsReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedsReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0251FF772C0E3519007141B3 /* MedsReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsReminderApp.swift; sourceTree = "<group>"; };
-		0251FF792C0E3519007141B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0251FF7B2C0E351C007141B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0251FF7E2C0E351C007141B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0251FF882C0E3F3C007141B3 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,9 @@
 			isa = PBXGroup;
 			children = (
 				0251FF772C0E3519007141B3 /* MedsReminderApp.swift */,
-				0251FF792C0E3519007141B3 /* ContentView.swift */,
+				0251FF872C0E3F03007141B3 /* Model */,
+				0251FF862C0E3EFD007141B3 /* ViewModels */,
+				0251FF852C0E3EEC007141B3 /* Views */,
 				0251FF7B2C0E351C007141B3 /* Assets.xcassets */,
 				0251FF7D2C0E351C007141B3 /* Preview Content */,
 			);
@@ -65,6 +67,28 @@
 				0251FF7E2C0E351C007141B3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0251FF852C0E3EEC007141B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0251FF882C0E3F3C007141B3 /* IntroView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0251FF862C0E3EFD007141B3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0251FF872C0E3F03007141B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +161,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0251FF7A2C0E3519007141B3 /* ContentView.swift in Sources */,
 				0251FF782C0E3519007141B3 /* MedsReminderApp.swift in Sources */,
+				0251FF892C0E3F3C007141B3 /* IntroView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
