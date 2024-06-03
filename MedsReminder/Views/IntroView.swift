@@ -17,7 +17,7 @@ struct IntroView: View {
                 Spacer()
                 Text("Meds\nReminder")
                     .foregroundStyle(Color.white)
-                    .font(.largeTitle)
+                    .font(.custom("Helvetica", size: 64, relativeTo: .largeTitle))
                     .bold()
                 Spacer()
                 Image("IntroImage")
