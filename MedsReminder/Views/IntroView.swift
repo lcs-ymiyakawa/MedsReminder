@@ -10,10 +10,14 @@ import SwiftUI
 
 struct IntroView: View {
     
+    // MARK: Stored properties
     @State private var titleOffset = -350.0
+    
+    //MARK: Computed properties
     var body: some View {
         NavigationStack {
             ZStack {
+                // back ground
                 Color.specialGreen
                     .ignoresSafeArea()
                 
@@ -31,7 +35,8 @@ struct IntroView: View {
                     Image("IntroImage")
                         .resizable()
                         .scaledToFit()
-                        .padding(.horizontal, 50)
+                        .padding(.horizontal, 40)
+                        .offset(x: -40)
                     
                     Spacer()
                     
@@ -53,7 +58,7 @@ struct IntroView: View {
             }
             .task {
                 withAnimation(.easeInOut(duration: 1.5)) {
-                    titleOffset = 0.0
+                    titleOffset = -20.0
                 }
                 
             }
