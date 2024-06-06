@@ -14,13 +14,12 @@ struct TodayView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Spacer()
                 HStack {
                     ZStack {
                         RoundedRectangle(cornerRadius: 30)
                             .fill(.white)
                             .frame(height: 90)
-                        .frame(width: 200)
+                            .frame(width: 200)
                         Text("Date")
                             .font(.custom("Helvetica", size: 50, relativeTo: .largeTitle))
                     }
@@ -35,17 +34,49 @@ struct TodayView: View {
                             .scaledToFit()
                             .frame(width: 60)
                     }
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.black)
                     .padding(.horizontal, 20)
                 }
-                    
-                Text("Today")
-                    .foregroundStyle(Color.white)
-                    .font(.custom("Helvetica", size: 64, relativeTo: .largeTitle))
-                    .bold()
-
                 Spacer()
-                
+                HStack {
+                    ZStack {
+                        Rectangle()
+                            .fill(.darkGreen)
+                            .frame(height: 50)
+                        .frame(width: 300)
+                        Text("After Breakfast")
+                            .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
+                            .bold()
+                    }
+                    Spacer()
+                }
+                Spacer()
+                HStack {
+                    ZStack {
+                        Rectangle()
+                            .fill(.darkGreen)
+                            .frame(height: 50)
+                        .frame(width: 300)
+                        Text("After Lunch")
+                            .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
+                            .bold()
+                    }
+                    Spacer()
+                }
+                Spacer()
+                HStack {
+                    ZStack {
+                        Rectangle()
+                            .fill(.darkGreen)
+                            .frame(height: 50)
+                        .frame(width: 300)
+                        Text("After Dinner")
+                            .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
+                            .bold()
+                    }
+                    Spacer()
+                }
+                Spacer()
             }
         }
     }
