@@ -15,10 +15,29 @@ struct TodayView: View {
             
             VStack {
                 Spacer()
-                RoundedRectangle(cornerRadius: 30)
-                    .fill(.white)
-                    .frame(height: 90)
-                    .frame(width: 200)
+                HStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 30)
+                            .fill(.white)
+                            .frame(height: 90)
+                        .frame(width: 200)
+                        Text("Date")
+                            .font(.custom("Helvetica", size: 50, relativeTo: .largeTitle))
+                    }
+                    .padding()
+                    Spacer()
+                    
+                    NavigationLink {
+                        PersonalInformationView()
+                    } label: {
+                        Image(systemName: "person.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 60)
+                    }
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 20)
+                }
                     
                 Text("Today")
                     .foregroundStyle(Color.white)

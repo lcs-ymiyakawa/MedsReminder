@@ -13,6 +13,7 @@
 		0251FF892C0E3F3C007141B3 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF882C0E3F3C007141B3 /* IntroView.swift */; };
 		0251FF8B2C0E44E1007141B3 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF8A2C0E44E1007141B3 /* AppView.swift */; };
 		0251FF8F2C11ED80007141B3 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF8E2C11ED80007141B3 /* TodayView.swift */; };
+		0251FF912C11F309007141B3 /* PersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF902C11F309007141B3 /* PersonalInformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		0251FF882C0E3F3C007141B3 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		0251FF8A2C0E44E1007141B3 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		0251FF8E2C11ED80007141B3 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		0251FF902C11F309007141B3 /* PersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				0251FF8E2C11ED80007141B3 /* TodayView.swift */,
+				0251FF902C11F309007141B3 /* PersonalInformationView.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0251FF782C0E3519007141B3 /* MedsReminderApp.swift in Sources */,
+				0251FF912C11F309007141B3 /* PersonalInformationView.swift in Sources */,
 				0251FF8B2C0E44E1007141B3 /* AppView.swift in Sources */,
 				0251FF8F2C11ED80007141B3 /* TodayView.swift in Sources */,
 				0251FF892C0E3F3C007141B3 /* IntroView.swift in Sources */,
