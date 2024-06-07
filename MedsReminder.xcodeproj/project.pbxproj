@@ -59,8 +59,8 @@
 			children = (
 				0251FF772C0E3519007141B3 /* MedsReminderApp.swift */,
 				0251FF872C0E3F03007141B3 /* Model */,
-				0251FF862C0E3EFD007141B3 /* ViewModels */,
 				0251FF852C0E3EEC007141B3 /* Views */,
+				0251FF862C0E3EFD007141B3 /* ViewModels */,
 				0251FF7B2C0E351C007141B3 /* Assets.xcassets */,
 				0251FF7D2C0E351C007141B3 /* Preview Content */,
 			);
@@ -80,6 +80,8 @@
 			children = (
 				0251FF882C0E3F3C007141B3 /* IntroView.swift */,
 				0251FF8A2C0E44E1007141B3 /* AppView.swift */,
+				0251FF8E2C11ED80007141B3 /* TodayView.swift */,
+				0251FF902C11F309007141B3 /* PersonalInformationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -87,8 +89,6 @@
 		0251FF862C0E3EFD007141B3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				0251FF8E2C11ED80007141B3 /* TodayView.swift */,
-				0251FF902C11F309007141B3 /* PersonalInformationView.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
