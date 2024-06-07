@@ -34,5 +34,4 @@ import SwiftUI
                 .tag(3)
     }
     .accentColor(.black)
-    .preferredColorScheme(.dark)
 }

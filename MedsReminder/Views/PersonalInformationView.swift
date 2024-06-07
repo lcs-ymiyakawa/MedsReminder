@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct PersonalInformationView: View {
+    
     @State var name = ""
+    @State var dateOfBirth = ""
+    
     var body: some View {
         ZStack {
             Color.specialGreen
@@ -39,10 +42,10 @@ struct PersonalInformationView: View {
                     VStack {
                         HStack {
                             VStack {
-                                Text("name")
+                                TextField("Enter your name", text: $name)
                                     .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
                                 .padding(10)
-                                Text("date of birth")
+                                TextField("Date of Birth", text: $dateOfBirth)
                                     .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
                                 .padding(10)
                             }

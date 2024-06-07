@@ -37,7 +37,7 @@ struct TodayView: View {
                     .foregroundStyle(.black)
                     .padding(.horizontal, 20)
                 }
-                Spacer()
+                
                 HStack {
                     ZStack {
                         Rectangle()
@@ -50,7 +50,9 @@ struct TodayView: View {
                     }
                     Spacer()
                 }
-                Spacer()
+                
+                MedsTodayView()
+                
                 HStack {
                     ZStack {
                         Rectangle()
@@ -63,7 +65,8 @@ struct TodayView: View {
                     }
                     Spacer()
                 }
-                Spacer()
+                MedsTodayView()
+                
                 HStack {
                     ZStack {
                         Rectangle()
@@ -76,6 +79,8 @@ struct TodayView: View {
                     }
                     Spacer()
                 }
+                
+                MedsTodayView()
                 Spacer()
             }
         }
