@@ -11,7 +11,6 @@
 		0251FF7C2C0E351C007141B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0251FF7B2C0E351C007141B3 /* Assets.xcassets */; };
 		0251FF7F2C0E351C007141B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0251FF7E2C0E351C007141B3 /* Preview Assets.xcassets */; };
 		0251FF892C0E3F3C007141B3 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF882C0E3F3C007141B3 /* IntroView.swift */; };
-		0251FF8B2C0E44E1007141B3 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF8A2C0E44E1007141B3 /* AppView.swift */; };
 		0251FF8F2C11ED80007141B3 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF8E2C11ED80007141B3 /* TodayView.swift */; };
 		0251FF912C11F309007141B3 /* PersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF902C11F309007141B3 /* PersonalInformationView.swift */; };
 		0251FF992C13605B007141B3 /* MedsTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF982C13605B007141B3 /* MedsTodayView.swift */; };
@@ -24,7 +23,6 @@
 		0251FF7B2C0E351C007141B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0251FF7E2C0E351C007141B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0251FF882C0E3F3C007141B3 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
-		0251FF8A2C0E44E1007141B3 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		0251FF8E2C11ED80007141B3 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		0251FF902C11F309007141B3 /* PersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationView.swift; sourceTree = "<group>"; };
 		0251FF982C13605B007141B3 /* MedsTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsTodayView.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				0251FF882C0E3F3C007141B3 /* IntroView.swift */,
-				0251FF8A2C0E44E1007141B3 /* AppView.swift */,
 				0251FF8E2C11ED80007141B3 /* TodayView.swift */,
 				0251FF982C13605B007141B3 /* MedsTodayView.swift */,
 				0251FF902C11F309007141B3 /* PersonalInformationView.swift */,
@@ -178,7 +175,6 @@
 			files = (
 				0251FF782C0E3519007141B3 /* MedsReminderApp.swift in Sources */,
 				0251FF912C11F309007141B3 /* PersonalInformationView.swift in Sources */,
-				0251FF8B2C0E44E1007141B3 /* AppView.swift in Sources */,
 				0251FF992C13605B007141B3 /* MedsTodayView.swift in Sources */,
 				0251FF9B2C136602007141B3 /* MedicationModel.swift in Sources */,
 				0251FF8F2C11ED80007141B3 /* TodayView.swift in Sources */,
