@@ -9,9 +9,6 @@ import SwiftUI
 
 struct MedicationDetailView: View {
     
-    @State var medicationName = ""
-    @State var purpose = ""
-    
     var body: some View {
         ZStack {
             Color.specialGreen
@@ -25,12 +22,11 @@ struct MedicationDetailView: View {
                     VStack {
                         HStack {
                             VStack {
-                                TextField("Medication", text: $medicationName)
+                                Text("Medication")
                                     .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
                                 .padding(10)
                                 
-                                
-                                TextField("Purpose", text: $purpose)
+                                Text("purpose")
                                     .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
                                 .padding(10)
                             }
