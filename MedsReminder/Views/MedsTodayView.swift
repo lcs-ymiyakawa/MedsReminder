@@ -14,7 +14,7 @@ struct MedsTodayView: View {
         ZStack {
             Color.specialGreen
                 .ignoresSafeArea()
-            VStack {
+            
                 ZStack {
                     RoundedRectangle(cornerRadius: 50)
                         .fill(.white)
@@ -32,7 +32,7 @@ struct MedsTodayView: View {
                     }
                     .padding()
                 }
-            }
+            
         }
     }
 }

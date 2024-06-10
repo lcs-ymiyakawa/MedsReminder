@@ -22,7 +22,7 @@ struct PersonalInformationView: View {
                         .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
                         .padding()
                     Spacer()
-                    Text("Done")
+                    Text("Save")
                         .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
                         .padding()
                 }
@@ -54,6 +54,7 @@ struct PersonalInformationView: View {
                                 .scaledToFit()
                                 .frame(width: 100)
                         }
+                        .padding()
                     }
                 }
                 Spacer()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020F11F72C177F4E000F7676 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F11F62C177F4E000F7676 /* Medication.swift */; };
 		0251FF782C0E3519007141B3 /* MedsReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF772C0E3519007141B3 /* MedsReminderApp.swift */; };
 		0251FF7C2C0E351C007141B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0251FF7B2C0E351C007141B3 /* Assets.xcassets */; };
 		0251FF7F2C0E351C007141B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0251FF7E2C0E351C007141B3 /* Preview Assets.xcassets */; };
@@ -14,10 +15,18 @@
 		0251FF8F2C11ED80007141B3 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF8E2C11ED80007141B3 /* TodayView.swift */; };
 		0251FF912C11F309007141B3 /* PersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF902C11F309007141B3 /* PersonalInformationView.swift */; };
 		0251FF992C13605B007141B3 /* MedsTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF982C13605B007141B3 /* MedsTodayView.swift */; };
-		0251FF9B2C136602007141B3 /* MedicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF9A2C136602007141B3 /* MedicationModel.swift */; };
+		0251FFA22C175546007141B3 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 0251FFA12C175546007141B3 /* Auth */; };
+		0251FFA42C175546007141B3 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 0251FFA32C175546007141B3 /* Functions */; };
+		0251FFA62C175546007141B3 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 0251FFA52C175546007141B3 /* PostgREST */; };
+		0251FFA82C175546007141B3 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 0251FFA72C175546007141B3 /* Realtime */; };
+		0251FFAA2C175546007141B3 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 0251FFA92C175546007141B3 /* Storage */; };
+		0251FFAC2C175546007141B3 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 0251FFAB2C175546007141B3 /* Supabase */; };
+		0251FFAE2C175729007141B3 /* MedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FFAD2C175729007141B3 /* MedicationsView.swift */; };
+		0251FFB22C1777B5007141B3 /* MedicationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FFB12C1777B5007141B3 /* MedicationDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		020F11F62C177F4E000F7676 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		0251FF742C0E3519007141B3 /* MedsReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedsReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0251FF772C0E3519007141B3 /* MedsReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsReminderApp.swift; sourceTree = "<group>"; };
 		0251FF7B2C0E351C007141B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -26,7 +35,8 @@
 		0251FF8E2C11ED80007141B3 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		0251FF902C11F309007141B3 /* PersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationView.swift; sourceTree = "<group>"; };
 		0251FF982C13605B007141B3 /* MedsTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsTodayView.swift; sourceTree = "<group>"; };
-		0251FF9A2C136602007141B3 /* MedicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationModel.swift; sourceTree = "<group>"; };
+		0251FFAD2C175729007141B3 /* MedicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsView.swift; sourceTree = "<group>"; };
+		0251FFB12C1777B5007141B3 /* MedicationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +44,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0251FFA62C175546007141B3 /* PostgREST in Frameworks */,
+				0251FFA42C175546007141B3 /* Functions in Frameworks */,
+				0251FFAC2C175546007141B3 /* Supabase in Frameworks */,
+				0251FFA22C175546007141B3 /* Auth in Frameworks */,
+				0251FFAA2C175546007141B3 /* Storage in Frameworks */,
+				0251FFA82C175546007141B3 /* Realtime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +100,8 @@
 				0251FF8E2C11ED80007141B3 /* TodayView.swift */,
 				0251FF982C13605B007141B3 /* MedsTodayView.swift */,
 				0251FF902C11F309007141B3 /* PersonalInformationView.swift */,
+				0251FFAD2C175729007141B3 /* MedicationsView.swift */,
+				0251FFB12C1777B5007141B3 /* MedicationDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,7 +116,7 @@
 		0251FF872C0E3F03007141B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0251FF9A2C136602007141B3 /* MedicationModel.swift */,
+				020F11F62C177F4E000F7676 /* Medication.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +137,14 @@
 			dependencies = (
 			);
 			name = MedsReminder;
+			packageProductDependencies = (
+				0251FFA12C175546007141B3 /* Auth */,
+				0251FFA32C175546007141B3 /* Functions */,
+				0251FFA52C175546007141B3 /* PostgREST */,
+				0251FFA72C175546007141B3 /* Realtime */,
+				0251FFA92C175546007141B3 /* Storage */,
+				0251FFAB2C175546007141B3 /* Supabase */,
+			);
 			productName = MedsReminder;
 			productReference = 0251FF742C0E3519007141B3 /* MedsReminder.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +173,9 @@
 				Base,
 			);
 			mainGroup = 0251FF6B2C0E3519007141B3;
+			packageReferences = (
+				0251FFA02C175546007141B3 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 0251FF752C0E3519007141B3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -173,10 +202,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				020F11F72C177F4E000F7676 /* Medication.swift in Sources */,
+				0251FFB22C1777B5007141B3 /* MedicationDetailView.swift in Sources */,
 				0251FF782C0E3519007141B3 /* MedsReminderApp.swift in Sources */,
 				0251FF912C11F309007141B3 /* PersonalInformationView.swift in Sources */,
 				0251FF992C13605B007141B3 /* MedsTodayView.swift in Sources */,
-				0251FF9B2C136602007141B3 /* MedicationModel.swift in Sources */,
+				0251FFAE2C175729007141B3 /* MedicationsView.swift in Sources */,
 				0251FF8F2C11ED80007141B3 /* TodayView.swift in Sources */,
 				0251FF892C0E3F3C007141B3 /* IntroView.swift in Sources */,
 			);
@@ -384,6 +415,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0251FFA02C175546007141B3 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0251FFA12C175546007141B3 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0251FFA02C175546007141B3 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		0251FFA32C175546007141B3 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0251FFA02C175546007141B3 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		0251FFA52C175546007141B3 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0251FFA02C175546007141B3 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		0251FFA72C175546007141B3 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0251FFA02C175546007141B3 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		0251FFA92C175546007141B3 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0251FFA02C175546007141B3 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		0251FFAB2C175546007141B3 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0251FFA02C175546007141B3 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0251FF6C2C0E3519007141B3 /* Project object */;
 }
