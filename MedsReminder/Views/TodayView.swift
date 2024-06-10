@@ -88,21 +88,5 @@ struct TodayView: View {
 }
 
 #Preview {
-    TabView() {
-
     TodayView()
-            .tabItem {
-                Image(systemName: "pills")
-                Text("Today")
-            }
-            .tag(1)
-
-        MedicationsView()
-                .tabItem {
-                    Image(systemName: "doc.text")
-                    Text("Medications")
-                }
-                .tag(2)
-    }
-    .accentColor(.black)
 }

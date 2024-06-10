@@ -12,6 +12,7 @@ struct MedicationsView: View {
         ZStack {
             Color.specialGreen
                 .ignoresSafeArea()
+        
             VStack {
                 HStack {
                     ZStack {
@@ -38,11 +39,22 @@ struct MedicationsView: View {
                     } label: {
                         Text("a")
                     }
-
+                    
                 }
-
+                .listStyle(.plain)
                 
             }
+            
+//            .toolbar {
+//                ToolbarItem(placement: .topBarLeading) {
+//                    Button {
+//                        //
+//                    } label: {
+//                        Image(systemName: "plus")
+//                    }
+//
+//                }
+//            }
         }
     }
 }
