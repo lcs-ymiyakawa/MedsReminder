@@ -32,9 +32,14 @@ struct MedicationsView: View {
                     Spacer()
                 }
                 
-//                List {
-//                    NavigationLink(destination: MedicationDetailView(), label: Text("a"))
-//                }
+                List {
+                    NavigationLink {
+                        MedicationDetailView()
+                    } label: {
+                        Text("a")
+                    }
+
+                }
 
                 
             }

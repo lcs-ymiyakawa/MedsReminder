@@ -41,7 +41,7 @@ struct IntroView: View {
                     Spacer()
                     
                     NavigationLink {
-                        TodayView()
+                        LandingView()
                     } label: {
                         Text("Get Started")
                             .underline()
