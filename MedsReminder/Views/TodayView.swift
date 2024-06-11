@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TodayView: View {
+    @State private var selectedDate = Date()
     var body: some View {
         ZStack {
             Color.specialGreen
@@ -20,8 +21,12 @@ struct TodayView: View {
                             .fill(.white)
                             .frame(height: 90)
                             .frame(width: 200)
-                        Text("Date")
-                            .font(.custom("Helvetica", size: 50, relativeTo: .largeTitle))
+                        DatePicker(
+                            "", selection: $selectedDate,
+                            displayedComponents: .date
+                        )
+                        .labelsHidden()
+                        .scaleEffect(1.2)
                     }
                     .padding()
                     Spacer()

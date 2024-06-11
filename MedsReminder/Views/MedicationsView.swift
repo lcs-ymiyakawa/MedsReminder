@@ -28,7 +28,7 @@ struct MedicationsView: View {
                     .listStyle(.plain)
                 }
                 .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
+                    ToolbarItem(placement: .topBarTrailing) {
                         Button {
                         } label: {
                             Image(systemName: "plus")
