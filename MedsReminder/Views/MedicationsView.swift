@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct MedicationsView: View {
+    
+    
+    @State private var addNewMedicationIsShowing = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -30,10 +34,14 @@ struct MedicationsView: View {
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
+                            addNewMedicationIsShowing = true
                         } label: {
                             Image(systemName: "plus")
                         }
                     }
+                }
+                .sheet(isPresented: $addNewMedicationIsShowing) {
+                    AddMedicationsView(dismissSheet: $addNewMedicationIsShowing)
                 }
             }
             .navigationTitle("Medications")

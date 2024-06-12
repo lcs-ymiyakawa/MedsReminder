@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		020F11F72C177F4E000F7676 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F11F62C177F4E000F7676 /* Medication.swift */; };
 		020F11F92C17839C000F7676 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F11F82C17839C000F7676 /* LandingView.swift */; };
+		024443EA2C19199500BC32E7 /* AddMedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024443E92C19199500BC32E7 /* AddMedicationsView.swift */; };
 		0251FF782C0E3519007141B3 /* MedsReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FF772C0E3519007141B3 /* MedsReminderApp.swift */; };
 		0251FF7C2C0E351C007141B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0251FF7B2C0E351C007141B3 /* Assets.xcassets */; };
 		0251FF7F2C0E351C007141B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0251FF7E2C0E351C007141B3 /* Preview Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		020F11F62C177F4E000F7676 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		020F11F82C17839C000F7676 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		024443E92C19199500BC32E7 /* AddMedicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationsView.swift; sourceTree = "<group>"; };
 		0251FF742C0E3519007141B3 /* MedsReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedsReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0251FF772C0E3519007141B3 /* MedsReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsReminderApp.swift; sourceTree = "<group>"; };
 		0251FF7B2C0E351C007141B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				0251FF982C13605B007141B3 /* MedsTodayView.swift */,
 				0251FF902C11F309007141B3 /* PersonalInformationView.swift */,
 				0251FFAD2C175729007141B3 /* MedicationsView.swift */,
+				024443E92C19199500BC32E7 /* AddMedicationsView.swift */,
 				0251FFB12C1777B5007141B3 /* MedicationDetailView.swift */,
 			);
 			path = Views;
@@ -214,6 +217,7 @@
 				0251FFAE2C175729007141B3 /* MedicationsView.swift in Sources */,
 				0251FF8F2C11ED80007141B3 /* TodayView.swift in Sources */,
 				0251FF892C0E3F3C007141B3 /* IntroView.swift in Sources */,
+				024443EA2C19199500BC32E7 /* AddMedicationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
