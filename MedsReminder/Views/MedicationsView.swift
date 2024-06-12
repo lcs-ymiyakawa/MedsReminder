@@ -23,14 +23,20 @@ struct MedicationsView: View {
                 VStack {
                     
                     List {
+                        ForEach(medications) { medication in
                         NavigationLink(destination: MedicationDetailView()) {
-                            Text("a")
+                            Text(medication.medication)
                         }
-                        
-                        NavigationLink(destination: MedicationDetailView()) {
-                            Text("b")
+                            
+                        .swipeActions {
+                            Button("Delete",
+                                   role: .destructive) {
+                                delete(medication)
+                            }
                         }
+                            
                     }
+                }
                     .listStyle(.plain)
                 }
                 .toolbar {
@@ -51,7 +57,13 @@ struct MedicationsView: View {
             .navigationTitle("Medications")
         }
     }
+    private func delete(_ medication: Medication) {
+         if let index = medications.firstIndex(where: { $0.id == medication.id }) {
+             medications.remove(at: index)
+         }
+     }
 }
+
 
 
 #Preview {
