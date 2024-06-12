@@ -13,32 +13,36 @@ struct AddMedicationsView: View {
     @State private var description: String = ""
     
     @Binding var dismissSheet: Bool
+    @Binding var medications: [Medication]
+    
     var body: some View {
         NavigationStack {
             Form {
-                    
-                    Section(header: Text("Medication")) {
-                        
-                        TextField("Medication", text: $medication)
-                        Picker("Time", selection: $time) {
-                            Text("Breakfast").tag(1)
-                            Text("Lunch").tag(2)
-                            Text("Dinner").tag(3)
-                            
-                        }
+                Section(header: Text("Medication")) {
+                    TextField("Medication", text: $medication)
+                    Picker("Time", selection: $time) {
+                        Text("Breakfast").tag(1)
+                        Text("Lunch").tag(2)
+                        Text("Dinner").tag(3)
                     }
-                    
-                        Section(header: Text("Description")) {
-                            TextEditor(text: $description)
-                                .frame(height: 400)
-                        }
+                }
+                Section(header: Text("Description")) {
+                    TextEditor(text: $description)
+                        .frame(height: 200)
+                }
             }
             .navigationTitle("Add Medication")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .principal) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                         dismissSheet = false
+                        let newMedication = Medication(
+                            medication: medication,
+                            time: time,
+                            description: description
+                        )
+                        medications.append(newMedication)
+                        dismissSheet = false
                     } label: {
                         Text("Add")
                     }
@@ -49,5 +53,9 @@ struct AddMedicationsView: View {
 }
 
 #Preview {
-    AddMedicationsView(dismissSheet: Binding.constant(true))
+    AddMedicationsView(
+        dismissSheet: .constant(true),
+        medications: .constant(exampleMedications)
+    )
 }
+

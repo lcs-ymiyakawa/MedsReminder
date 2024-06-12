@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MedicationDetailView: View {
-    
     var body: some View {
         ZStack {
             Color.specialGreen

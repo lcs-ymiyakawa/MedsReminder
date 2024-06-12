@@ -12,6 +12,8 @@ struct MedicationsView: View {
     
     @State private var addNewMedicationIsShowing = false
     
+    @State private var medications: [Medication] = exampleMedications
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -41,7 +43,9 @@ struct MedicationsView: View {
                     }
                 }
                 .sheet(isPresented: $addNewMedicationIsShowing) {
-                    AddMedicationsView(dismissSheet: $addNewMedicationIsShowing)
+                    AddMedicationsView(dismissSheet: $addNewMedicationIsShowing,
+                        medications: $medications
+                    )
                 }
             }
             .navigationTitle("Medications")
