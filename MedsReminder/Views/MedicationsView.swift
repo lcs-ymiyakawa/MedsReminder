@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MedicationsView: View {
     @State private var addNewMedicationIsShowing = false
-    @EnvironmentObject var viewModel: MedicationViewModel
+    
+    @State private var medications: [Medication] = exampleMedications
+    
     
     var body: some View {
         NavigationView {
@@ -18,45 +20,32 @@ struct MedicationsView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    List {
-                        ForEach(viewModel.medications) { medication in
-                            NavigationLink(destination: MedicationDetailView(medication: medication)) {
-                                Text(medication.medication)
-                            }
-                            .swipeActions {
-                                Button("Delete", role: .destructive) {
-                                    delete(medication)
-                                }
-                            }
-                        }
+                    List(medications) { medication in
+                        Text(medication.medication)
+                        
                     }
                     .listStyle(.plain)
-                }
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            addNewMedicationIsShowing = true
-                        } label: {
-                            Image(systemName: "plus")
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button {
+                                addNewMedicationIsShowing = true
+                            } label: {
+                                Image(systemName: "plus")
+                            }
                         }
                     }
                 }
                 .sheet(isPresented: $addNewMedicationIsShowing) {
-                    AddMedicationsView(dismissSheet: $addNewMedicationIsShowing)
-                        .environmentObject(viewModel)
+                    AddMedicationsView(dismissSheet: $addNewMedicationIsShowing,
+                        medications: $medications
+                    )
                 }
+                .navigationTitle("Medications")
             }
-            .navigationTitle("Medications")
-        }
-    }
-    
-    private func delete(_ medication: Medication) {
-        if let index = viewModel.medications.firstIndex(where: { $0.id == medication.id }) {
-            viewModel.medications.remove(at: index)
         }
     }
 }
 
 #Preview {
-    MedicationsView().environmentObject(MedicationViewModel())
+    MedicationsView()
 }

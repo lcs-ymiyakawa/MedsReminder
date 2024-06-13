@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MedicationDetailView: View {
-    @EnvironmentObject var viewModel: MedicationViewModel
     var medication: Medication
     
     var body: some View {
@@ -43,5 +42,4 @@ struct MedicationDetailView: View {
 
 #Preview {
     MedicationDetailView(medication: exampleMedications[1])
-        .environmentObject(MedicationViewModel())
 }

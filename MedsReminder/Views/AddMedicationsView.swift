@@ -13,7 +13,11 @@ struct AddMedicationsView: View {
     @State private var description: String = ""
     
     @Binding var dismissSheet: Bool
-    @EnvironmentObject var viewModel: MedicationViewModel
+    @Binding var medications: [Medication]
+    
+    var atLeastOneInputFieldsAreBlank: Bool {
+        return medication.isEmpty || time.isEmpty || description.isEmpty
+    }
     
     var body: some View {
         NavigationStack {
@@ -34,18 +38,16 @@ struct AddMedicationsView: View {
             .navigationTitle("Add Medication")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     Button {
-                        let newMedication = Medication(
-                            medication: medication,
-                            time: time,
-                            description: description
-                        )
-                        viewModel.medications.append(newMedication)
+                        let newMedication = Medication(medication: medication, time: time, description: description)
+                        
+                        medications.append(newMedication)
                         dismissSheet = false
                     } label: {
-                        Text("Add")
+                        Text("Done")
                     }
+                    .disabled(atLeastOneInputFieldsAreBlank)
                 }
             }
         }
@@ -53,7 +55,9 @@ struct AddMedicationsView: View {
 }
 
 #Preview {
-    AddMedicationsView(dismissSheet: .constant(true))
-        .environmentObject(MedicationViewModel())
+    AddMedicationsView(
+        dismissSheet: .constant(true),
+        medications: Binding.constant(exampleMedications)
+        )
 }
 
