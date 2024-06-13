@@ -6,4 +6,8 @@
 //
 
 import Foundation
-import Storage
+import SwiftUI
+
+class MedicationViewModel: ObservableObject {
+    @Published var medications: [Medication] = exampleMedications
+}

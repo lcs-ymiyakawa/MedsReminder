@@ -29,8 +29,8 @@ struct PersonalInformationView: View {
                 HStack {
                     Text("Personal Info")
                         .font(.custom("Helvetica", size: 23, relativeTo: .largeTitle))
-                    .bold()
-                    .padding(10)
+                        .bold()
+                        .padding(10)
                     Spacer()
                 }
                 
@@ -38,16 +38,16 @@ struct PersonalInformationView: View {
                     Rectangle()
                         .fill(.white)
                         .frame(height: 300)
-                    .padding(.top, 30)
+                        .padding(.top, 30)
                     VStack {
                         HStack {
                             VStack {
                                 TextField("Enter your name", text: $name)
                                     .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
-                                .padding(10)
+                                    .padding(10)
                                 TextField("Date of Birth", text: $dateOfBirth)
                                     .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
-                                .padding(10)
+                                    .padding(10)
                             }
                             Image("photoImage")
                                 .resizable()

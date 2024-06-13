@@ -8,26 +8,28 @@
 import SwiftUI
 
 struct MedicationDetailView: View {
+    @EnvironmentObject var viewModel: MedicationViewModel
+    var medication: Medication
+    
     var body: some View {
         ZStack {
-            Color.specialGreen
+            Color.green
                 .ignoresSafeArea()
             VStack {
                 ZStack {
                     Rectangle()
-                        .fill(.white)
+                        .fill(Color.white)
                         .frame(height: 300)
-                    .padding(.top, 30)
+                        .padding(.top, 30)
                     VStack {
                         HStack {
-                            VStack {
-                                Text("Medication")
-                                    .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
-                                .padding(10)
-                                
-                                Text("purpose")
-                                    .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
-                                .padding(10)
+                            VStack(alignment: .leading) {
+                                Text(medication.medication)
+                                    .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
+                                Text("Time: \(medication.time)")
+                                    .font(.subheadline)
+                                Text(medication.description)
+                                    .font(.subheadline)
                             }
                         }
                         .padding()
@@ -40,5 +42,6 @@ struct MedicationDetailView: View {
 }
 
 #Preview {
-    MedicationDetailView()
+    MedicationDetailView(medication: exampleMedications[1])
+        .environmentObject(MedicationViewModel())
 }

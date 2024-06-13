@@ -9,11 +9,11 @@ import SwiftUI
 
 struct AddMedicationsView: View {
     @State private var medication: String = ""
-    @State private var time: Int = 0
+    @State private var time: String = ""
     @State private var description: String = ""
     
     @Binding var dismissSheet: Bool
-    @Binding var medications: [Medication]
+    @EnvironmentObject var viewModel: MedicationViewModel
     
     var body: some View {
         NavigationStack {
@@ -21,9 +21,9 @@ struct AddMedicationsView: View {
                 Section(header: Text("Medication")) {
                     TextField("Medication", text: $medication)
                     Picker("Time", selection: $time) {
-                        Text("Breakfast").tag(1)
-                        Text("Lunch").tag(2)
-                        Text("Dinner").tag(3)
+                        Text("Breakfast").tag("Breakfast")
+                        Text("Lunch").tag("Lunch")
+                        Text("Dinner").tag("Dinner")
                     }
                 }
                 Section(header: Text("Description")) {
@@ -41,7 +41,7 @@ struct AddMedicationsView: View {
                             time: time,
                             description: description
                         )
-                        medications.append(newMedication)
+                        viewModel.medications.append(newMedication)
                         dismissSheet = false
                     } label: {
                         Text("Add")
@@ -53,9 +53,7 @@ struct AddMedicationsView: View {
 }
 
 #Preview {
-    AddMedicationsView(
-        dismissSheet: .constant(true),
-        medications: .constant(exampleMedications)
-    )
+    AddMedicationsView(dismissSheet: .constant(true))
+        .environmentObject(MedicationViewModel())
 }
 

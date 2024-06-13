@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct MedicationsView: View {
-    
-    
     @State private var addNewMedicationIsShowing = false
-    
-    @State private var medications: [Medication] = exampleMedications
+    @EnvironmentObject var viewModel: MedicationViewModel
     
     var body: some View {
         NavigationView {
@@ -21,22 +18,18 @@ struct MedicationsView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    
                     List {
-                        ForEach(medications) { medication in
-                        NavigationLink(destination: MedicationDetailView()) {
-                            Text(medication.medication)
-                        }
-                            
-                        .swipeActions {
-                            Button("Delete",
-                                   role: .destructive) {
-                                delete(medication)
+                        ForEach(viewModel.medications) { medication in
+                            NavigationLink(destination: MedicationDetailView(medication: medication)) {
+                                Text(medication.medication)
+                            }
+                            .swipeActions {
+                                Button("Delete", role: .destructive) {
+                                    delete(medication)
+                                }
                             }
                         }
-                            
                     }
-                }
                     .listStyle(.plain)
                 }
                 .toolbar {
@@ -49,23 +42,21 @@ struct MedicationsView: View {
                     }
                 }
                 .sheet(isPresented: $addNewMedicationIsShowing) {
-                    AddMedicationsView(dismissSheet: $addNewMedicationIsShowing,
-                        medications: $medications
-                    )
+                    AddMedicationsView(dismissSheet: $addNewMedicationIsShowing)
+                        .environmentObject(viewModel)
                 }
             }
             .navigationTitle("Medications")
         }
     }
+    
     private func delete(_ medication: Medication) {
-         if let index = medications.firstIndex(where: { $0.id == medication.id }) {
-             medications.remove(at: index)
-         }
-     }
+        if let index = viewModel.medications.firstIndex(where: { $0.id == medication.id }) {
+            viewModel.medications.remove(at: index)
+        }
+    }
 }
 
-
-
 #Preview {
-    MedicationsView()
+    MedicationsView().environmentObject(MedicationViewModel())
 }
