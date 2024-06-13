@@ -9,60 +9,49 @@ import SwiftUI
 
 struct PersonalInformationView: View {
     
-    @State var name = ""
-    @State var dateOfBirth = ""
+    @State private var name: String = ""
+    @State private var dateOfBirth: String = ""
+    @State private var image: String? = ""
+    @State var newImage: PersonalInfoImage?
+    
+    @Binding var dismissSheet: Bool
+    @Binding var personalInfos: [PersonalInfo]
+    
+    var atLeastOneInputFieldsAreBlank: Bool {
+        return name.isEmpty || dateOfBirth.isEmpty || ((image?.isEmpty) != nil)
+    }
     
     var body: some View {
-        ZStack {
-            Color.specialGreen
-                .ignoresSafeArea()
-            VStack {
-                HStack {
-                    Text("Cancel")
-                        .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
-                        .padding()
-                    Spacer()
-                    Text("Save")
-                        .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
-                        .padding()
-                }
-                HStack {
-                    Text("Personal Info")
-                        .font(.custom("Helvetica", size: 23, relativeTo: .largeTitle))
-                        .bold()
-                        .padding(10)
-                    Spacer()
-                }
-                
-                ZStack {
-                    Rectangle()
-                        .fill(.white)
-                        .frame(height: 300)
-                        .padding(.top, 30)
-                    VStack {
-                        HStack {
-                            VStack {
-                                TextField("Enter your name", text: $name)
-                                    .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
-                                    .padding(10)
-                                TextField("Date of Birth", text: $dateOfBirth)
-                                    .font(.custom("Helvetica", size: 20, relativeTo: .largeTitle))
-                                    .padding(10)
+        NavigationStack {
+            Form {
+                Section(header: Text("Medication")) {
+                    TextField("Medication", text: $name)
+                    TextField("Time", text: $dateOfBirth) {
+                        PhotosPicker(selection: $selectionResult, matching: .images) {
+                            if let newImage = newImage {
+                                newImage.image
+                                    .resizable()
+                                    .scaledToFit()
+
+                            } else {
+                                Image(systemName: "photo.badge.plus")
+                                    .symbolRenderingMode(.multicolor)
+                                    .font(.system(size: 30))
+                                    .foregroundStyle(.tint)
+                                
                             }
-                            Image("photoImage")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 100)
                         }
-                        .padding()
                     }
                 }
-                Spacer()
             }
+            .navigationTitle("Personal Info")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
 #Preview {
-    PersonalInformationView()
+    PersonalInformationView(
+        dismissSheet: .constant(true),
+        personalInfos: Binding.constant(examplePersonalInfo))
 }
