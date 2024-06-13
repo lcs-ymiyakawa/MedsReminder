@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddMedicationsView: View {
-    @State private var medication: String = ""
+    @State private var title: String = ""
     @State private var time: String = ""
     @State private var description: String = ""
     
@@ -16,14 +16,14 @@ struct AddMedicationsView: View {
     @Binding var medications: [Medication]
     
     var atLeastOneInputFieldsAreBlank: Bool {
-        return medication.isEmpty || time.isEmpty || description.isEmpty
+        return title.isEmpty || time.isEmpty || description.isEmpty
     }
     
     var body: some View {
         NavigationStack {
             Form {
                 Section(header: Text("Medication")) {
-                    TextField("Medication", text: $medication)
+                    TextField("Medication", text: $title)
                     Picker("Time", selection: $time) {
                         Text("Breakfast").tag("Breakfast")
                         Text("Lunch").tag("Lunch")
@@ -40,7 +40,7 @@ struct AddMedicationsView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
-                        let newMedication = Medication(medication: medication, time: time, description: description)
+                        let newMedication = Medication(title: title, time: time, description: description)
                         
                         medications.append(newMedication)
                         dismissSheet = false

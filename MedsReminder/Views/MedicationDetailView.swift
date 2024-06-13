@@ -23,13 +23,14 @@ struct MedicationDetailView: View {
                     VStack {
                         HStack {
                             VStack(alignment: .leading) {
-                                Text(medication.medication)
+                                Text(medication.title)
                                     .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
                                 Text("Time: \(medication.time)")
                                     .font(.subheadline)
                                 Text(medication.description)
                                     .font(.subheadline)
                             }
+                            Spacer()
                         }
                         .padding()
                     }

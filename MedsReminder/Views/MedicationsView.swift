@@ -20,8 +20,12 @@ struct MedicationsView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    List(medications) { medication in
-                        Text(medication.medication)
+                    List(medications) { currentMedication in
+                        NavigationLink {
+                            MedicationDetailView(medication: currentMedication)
+                        } label: {
+                            Text(currentMedication.title)
+                        }
                         
                     }
                     .listStyle(.plain)
@@ -31,6 +35,7 @@ struct MedicationsView: View {
                                 addNewMedicationIsShowing = true
                             } label: {
                                 Image(systemName: "plus")
+                                    .foregroundColor(.blue)
                             }
                         }
                     }

@@ -9,12 +9,12 @@ import Foundation
 
 struct Medication: Identifiable {
     let id = UUID()
-    let medication: String
+    let title: String
     let time: String
     let description: String
 }
 
 let exampleMedications: [Medication] = [
-    Medication(medication: "Vitamine C", time: "Breakfast", description: "a"),
-    Medication(medication: "Med2", time: "Lunch", description: "a")
+    Medication(title: "Vitamine C", time: "Breakfast", description: "a"),
+    Medication(title: "Med2", time: "Lunch", description: "a")
 ]
