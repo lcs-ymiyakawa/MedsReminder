@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MedsTodayView: View {
-    @State var medication = ""
+    
+    @State private var title: String = ""
     
     var body: some View {
         ZStack {
@@ -26,7 +27,7 @@ struct MedsTodayView: View {
                             .foregroundColor(.black)
                             .frame(width: 50)
                             .padding(5)
-                        TextField("Medication", text: $medication)
+                        TextField("Medication", text: $title)
                             .foregroundColor(.black)
                             .font(.custom("Helvetica", size: 25, relativeTo: .largeTitle))
                     }

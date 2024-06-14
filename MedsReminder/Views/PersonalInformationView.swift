@@ -14,7 +14,6 @@ struct PersonalInformationView: View {
     @State private var image: String? = ""
     @State var newImage: PersonalInfoImage?
     
-    @Binding var dismissSheet: Bool
     @Binding var personalInfos: [PersonalInfo]
     
     var atLeastOneInputFieldsAreBlank: Bool {
@@ -51,7 +50,5 @@ struct PersonalInformationView: View {
 }
 
 #Preview {
-    PersonalInformationView(
-        dismissSheet: .constant(true),
-        personalInfos: Binding.constant(examplePersonalInfo))
+    PersonalInformationView(personalInfos: Binding.constant(examplePersonalInfo))
 }

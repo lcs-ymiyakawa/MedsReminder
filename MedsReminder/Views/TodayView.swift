@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct TodayView: View {
+    
     @State private var selectedDate = Date()
+    @Binding var tookMedication: Bool
+    @Binding var medications: [Medication] = exampleMedications
+    @Binding var personalInfos: [PersonalInfo] = examplePersonalInfo
+    
     var body: some View {
         ZStack {
             Color.specialGreen
@@ -32,7 +37,7 @@ struct TodayView: View {
                     Spacer()
                     
                     NavigationLink {
-                        PersonalInformationView()
+                        PersonalInformationView(personalInfos:
                     } label: {
                         Image(systemName: "person.circle")
                             .resizable()
@@ -42,7 +47,7 @@ struct TodayView: View {
                     .foregroundStyle(.black)
                     .padding(.horizontal, 20)
                 }
-                
+                                                
                 HStack {
                     ZStack {
                         Rectangle()
@@ -93,5 +98,5 @@ struct TodayView: View {
 }
 
 #Preview {
-    TodayView()
-}
+                            TodayView(tookMedication: .constant(true), medications: <#Binding<[Medication]>#>, personalInfos: <#Binding<[PersonalInfo]>#>)
+                        }
