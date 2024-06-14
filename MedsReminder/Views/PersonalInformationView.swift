@@ -9,46 +9,41 @@ import PhotosUI
 import SwiftUI
 
 struct PersonalInformationView: View {
-    
     @State private var name: String = ""
     @State private var dateOfBirth: String = ""
-    @State private var image: String? = ""
-    @State var newImage: PersonalInfoImage?
+    @State private var newImage: PersonalInfoImage?
+    @State private var selectedPhotoPickerItem: PhotosPickerItem?
     
-    @Binding var personalInfos: PersonalInfo
-    
-    var atLeastOneInputFieldsAreBlank: Bool {
-        return name.isEmpty || dateOfBirth.isEmpty || ((image?.isEmpty) != nil)
-    }
+    @Binding var personalInfo: PersonalInfo
     
     var body: some View {
         NavigationStack {
             Form {
-                Section(header: Text("Medication")) {
-                    TextField("Medication", text: $name)
-                    TextField("Time", text: $dateOfBirth)
-//                        PhotosPicker(selection: $selectionResult, matching: .images) {
-//                            if let newImage = newImage {
-//                                newImage.image
-//                                    .resizable()
-//                                    .scaledToFit()
-//
-//                            } else {
-//                                Image(systemName: "photo.badge.plus")
-//                                    .symbolRenderingMode(.multicolor)
-//                                    .font(.system(size: 30))
-//                                    .foregroundStyle(.tint)
-//                                
-//                            }
-//                        }
+                Section(header: Text("Personal Info")) {
+                    TextField("Name", text: $name)
+                    TextField("Date of Birth", text: $dateOfBirth)
+                    
+                    PhotosPicker(selection: $selectedPhotoPickerItem, matching: .images) {
+                        if let newImage = newImage {
+                            newImage.image
+                                .resizable()
+                                .scaledToFit()
+                        } else {
+                            Image(systemName: "photo.badge.plus")
+                                .symbolRenderingMode(.multicolor)
+                                .font(.system(size: 30))
+                                .foregroundStyle(.tint)
+                        }
+                    }
                 }
             }
             .navigationTitle("Personal Info")
             .navigationBarTitleDisplayMode(.inline)
+            
         }
     }
 }
 
 #Preview {
-    PersonalInformationView(personalInfos: Binding.constant(examplePersonalInfo))
+    PersonalInformationView(personalInfo: Binding.constant(examplePersonalInfo))
 }

@@ -40,7 +40,7 @@ struct TodayView: View {
                     Spacer()
                     
                         NavigationLink {
-                            PersonalInformationView(personalInfos: $personalInfo)
+                            PersonalInformationView(personalInfo: $personalInfo)
                         } label: {
                             Image(systemName: "person.circle")
                                 .resizable()
