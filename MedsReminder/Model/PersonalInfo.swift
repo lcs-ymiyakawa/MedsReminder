@@ -11,8 +11,8 @@ import SwiftUI
 struct PersonalInfo: Identifiable {
     let id = UUID()
     let name: String
-    let dateOfBirth: String
+    let dateOfBirth = Date()
     let ImageName: String?
 }
 
-let examplePersonalInfo = PersonalInfo(name: "Yoshi Miyakawa", dateOfBirth: "Feburuary 7th, 2006", ImageName: "YoshiImage")
+let examplePersonalInfo = PersonalInfo(name: "Yoshi Miyakawa", ImageName: "YoshiImage")

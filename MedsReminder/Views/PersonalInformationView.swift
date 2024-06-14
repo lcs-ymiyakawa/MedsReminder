@@ -10,9 +10,10 @@ import SwiftUI
 
 struct PersonalInformationView: View {
     @State private var name: String = ""
-    @State private var dateOfBirth: String = ""
+    @State private var dateOfBirth = Date()
     @State private var newImage: PersonalInfoImage?
     @State private var selectedPhotoPickerItem: PhotosPickerItem?
+    
     
     @Binding var personalInfo: PersonalInfo
     
@@ -20,8 +21,18 @@ struct PersonalInformationView: View {
         NavigationStack {
             Form {
                 Section(header: Text("Personal Info")) {
-                    TextField("Name", text: $name)
-                    TextField("Date of Birth", text: $dateOfBirth)
+                    HStack {
+                        Text("Name")
+                        TextField("Here", text: $name)
+                    }
+                    HStack {
+                        Text("Date of Birth")
+                        DatePicker(
+                            "", selection: $dateOfBirth,
+                            displayedComponents: .date
+                        )
+                        .labelsHidden()
+                    }
                     
                     PhotosPicker(selection: $selectedPhotoPickerItem, matching: .images) {
                         if let newImage = newImage {
