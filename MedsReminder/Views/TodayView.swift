@@ -11,8 +11,6 @@ struct TodayView: View {
     
     @State private var selectedDate = Date()
     
-    @State var medications: [Medication] = exampleMedications
-    
     @State var personalInfo: PersonalInfo = examplePersonalInfo
     
     var body: some View {
