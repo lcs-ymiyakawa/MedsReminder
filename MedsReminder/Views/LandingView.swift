@@ -10,20 +10,20 @@ import SwiftUI
 struct LandingView: View {
     var body: some View {
         TabView() {
-
-        TodayView()
+            
+            TodayView()
                 .tabItem {
                     Image(systemName: "pills")
                     Text("Today")
                 }
                 .tag(1)
-
+            
             MedicationsView()
-                    .tabItem {
-                        Image(systemName: "doc.text")
-                        Text("Medications")
-                    }
-                    .tag(2)
+                .tabItem {
+                    Image(systemName: "doc.text")
+                    Text("Medications")
+                }
+                .tag(2)
         }
         .accentColor(.black)
     }

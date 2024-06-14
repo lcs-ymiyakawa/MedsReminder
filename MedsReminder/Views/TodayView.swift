@@ -16,27 +16,27 @@ struct TodayView: View {
     var body: some View {
         
         NavigationView {
-        ZStack {
-            Color.specialGreen
-                .ignoresSafeArea()
-            
-            VStack {
-                HStack {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 30)
-                            .fill(.white)
-                            .frame(height: 90)
-                            .frame(width: 200)
-                        DatePicker(
-                            "", selection: $selectedDate,
-                            displayedComponents: .date
-                        )
-                        .labelsHidden()
-                        .scaleEffect(1.2)
-                    }
-                    .padding()
-                    Spacer()
-                    
+            ZStack {
+                Color.specialGreen
+                    .ignoresSafeArea()
+                
+                VStack {
+                    HStack {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 30)
+                                .fill(.white)
+                                .frame(height: 90)
+                                .frame(width: 200)
+                            DatePicker(
+                                "", selection: $selectedDate,
+                                displayedComponents: .date
+                            )
+                            .labelsHidden()
+                            .scaleEffect(1.2)
+                        }
+                        .padding()
+                        Spacer()
+                        
                         NavigationLink {
                             PersonalInformationView(personalInfo: $personalInfo)
                         } label: {
@@ -47,56 +47,56 @@ struct TodayView: View {
                         }
                         .foregroundStyle(.black)
                         .padding(.horizontal, 20)
+                        
+                    }
                     
-                }
-                
-                HStack {
-                    ZStack {
-                        Rectangle()
-                            .fill(.darkGreen)
-                            .frame(height: 50)
-                            .frame(width: 300)
-                        Text("After Breakfast")
-                            .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
-                            .bold()
+                    HStack {
+                        ZStack {
+                            Rectangle()
+                                .fill(.darkGreen)
+                                .frame(height: 50)
+                                .frame(width: 300)
+                            Text("After Breakfast")
+                                .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
+                                .bold()
+                        }
+                        Spacer()
                     }
+                    
+                    MedsTodayView()
+                    
+                    HStack {
+                        ZStack {
+                            Rectangle()
+                                .fill(.darkGreen)
+                                .frame(height: 50)
+                                .frame(width: 300)
+                            Text("After Lunch")
+                                .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
+                                .bold()
+                        }
+                        Spacer()
+                    }
+                    MedsTodayView()
+                    
+                    HStack {
+                        ZStack {
+                            Rectangle()
+                                .fill(.darkGreen)
+                                .frame(height: 50)
+                                .frame(width: 300)
+                            Text("After Dinner")
+                                .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
+                                .bold()
+                        }
+                        Spacer()
+                    }
+                    
+                    MedsTodayView()
                     Spacer()
                 }
-                
-                MedsTodayView()
-                
-                HStack {
-                    ZStack {
-                        Rectangle()
-                            .fill(.darkGreen)
-                            .frame(height: 50)
-                            .frame(width: 300)
-                        Text("After Lunch")
-                            .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
-                            .bold()
-                    }
-                    Spacer()
-                }
-                MedsTodayView()
-                
-                HStack {
-                    ZStack {
-                        Rectangle()
-                            .fill(.darkGreen)
-                            .frame(height: 50)
-                            .frame(width: 300)
-                        Text("After Dinner")
-                            .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
-                            .bold()
-                    }
-                    Spacer()
-                }
-                
-                MedsTodayView()
-                Spacer()
             }
         }
-    }
     }
 }
 

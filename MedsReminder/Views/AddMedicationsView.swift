@@ -58,6 +58,6 @@ struct AddMedicationsView: View {
     AddMedicationsView(
         dismissSheet: .constant(true),
         medications: Binding.constant(exampleMedications)
-        )
+    )
 }
 

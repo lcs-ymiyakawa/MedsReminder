@@ -48,12 +48,12 @@ struct IntroView: View {
                             .foregroundStyle(Color.white)
                             .font(.largeTitle)
                             .bold()
-
+                        
                     }
-
-
+                    
+                    
                     Spacer()
-
+                    
                 }
             }
             .task {
@@ -62,7 +62,7 @@ struct IntroView: View {
                 }
                 
             }
-
+            
         }
     }
 }

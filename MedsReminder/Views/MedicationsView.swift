@@ -42,7 +42,7 @@ struct MedicationsView: View {
                 }
                 .sheet(isPresented: $addNewMedicationIsShowing) {
                     AddMedicationsView(dismissSheet: $addNewMedicationIsShowing,
-                        medications: $medications
+                                       medications: $medications
                     )
                 }
                 .navigationTitle("Medications")
