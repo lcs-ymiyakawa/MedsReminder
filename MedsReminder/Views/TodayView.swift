@@ -11,8 +11,8 @@ struct TodayView: View {
     
     @State private var selectedDate = Date()
     @Binding var tookMedication: Bool
-    @Binding var medications: [Medication] = exampleMedications
-    @Binding var personalInfos: [PersonalInfo] = examplePersonalInfo
+    @State var medications: [Medication] = exampleMedications
+    @State var personalInfos: [PersonalInfo] = examplePersonalInfo
     
     var body: some View {
         ZStack {
@@ -37,7 +37,7 @@ struct TodayView: View {
                     Spacer()
                     
                     NavigationLink {
-                        PersonalInformationView(personalInfos:
+                        PersonalInformationView(personalInfos: <#Binding<[PersonalInfo]>#>)
                     } label: {
                         Image(systemName: "person.circle")
                             .resizable()
@@ -97,6 +97,7 @@ struct TodayView: View {
     }
 }
 
-#Preview {
-                            TodayView(tookMedication: .constant(true), medications: <#Binding<[Medication]>#>, personalInfos: <#Binding<[PersonalInfo]>#>)
+#Preview {TodayView(tookMedication: .constant(true),
+                    medications: Binding.constant(exampleMedications),
+                    personalInfos: <#Binding<[PersonalInfo]>#>)
                         }
