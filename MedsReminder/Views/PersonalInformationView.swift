@@ -5,6 +5,7 @@
 //  Created by 宮川義之助 on 2024/06/06.
 //
 
+import PhotosUI
 import SwiftUI
 
 struct PersonalInformationView: View {
@@ -14,7 +15,7 @@ struct PersonalInformationView: View {
     @State private var image: String? = ""
     @State var newImage: PersonalInfoImage?
     
-    @Binding var personalInfos: [PersonalInfo]
+    @Binding var personalInfos: PersonalInfo
     
     var atLeastOneInputFieldsAreBlank: Bool {
         return name.isEmpty || dateOfBirth.isEmpty || ((image?.isEmpty) != nil)
@@ -25,22 +26,21 @@ struct PersonalInformationView: View {
             Form {
                 Section(header: Text("Medication")) {
                     TextField("Medication", text: $name)
-                    TextField("Time", text: $dateOfBirth) {
-                        PhotosPicker(selection: $selectionResult, matching: .images) {
-                            if let newImage = newImage {
-                                newImage.image
-                                    .resizable()
-                                    .scaledToFit()
-
-                            } else {
-                                Image(systemName: "photo.badge.plus")
-                                    .symbolRenderingMode(.multicolor)
-                                    .font(.system(size: 30))
-                                    .foregroundStyle(.tint)
-                                
-                            }
-                        }
-                    }
+                    TextField("Time", text: $dateOfBirth)
+//                        PhotosPicker(selection: $selectionResult, matching: .images) {
+//                            if let newImage = newImage {
+//                                newImage.image
+//                                    .resizable()
+//                                    .scaledToFit()
+//
+//                            } else {
+//                                Image(systemName: "photo.badge.plus")
+//                                    .symbolRenderingMode(.multicolor)
+//                                    .font(.system(size: 30))
+//                                    .foregroundStyle(.tint)
+//                                
+//                            }
+//                        }
                 }
             }
             .navigationTitle("Personal Info")

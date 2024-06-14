@@ -6,14 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct PersonalInfo: Identifiable {
     let id = UUID()
     let name: String
     let dateOfBirth: String
-    let Image: String?
+    let ImageName: String?
 }
 
-let examplePersonalInfo: [PersonalInfo] = [
-    PersonalInfo(name: "Yoshi Miyakawa", dateOfBirth: "Feburuary 7th, 2006", Image: "photoImage")
-]
+let examplePersonalInfo = PersonalInfo(name: "Yoshi Miyakawa", dateOfBirth: "Feburuary 7th, 2006", ImageName: "YoshiImage")

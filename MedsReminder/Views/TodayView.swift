@@ -10,11 +10,14 @@ import SwiftUI
 struct TodayView: View {
     
     @State private var selectedDate = Date()
-    @Binding var tookMedication: Bool
+    
     @State var medications: [Medication] = exampleMedications
-    @State var personalInfos: [PersonalInfo] = examplePersonalInfo
+    
+    @State var personalInfo: PersonalInfo = examplePersonalInfo
     
     var body: some View {
+        
+        NavigationView {
         ZStack {
             Color.specialGreen
                 .ignoresSafeArea()
@@ -36,24 +39,25 @@ struct TodayView: View {
                     .padding()
                     Spacer()
                     
-                    NavigationLink {
-                        PersonalInformationView(personalInfos: <#Binding<[PersonalInfo]>#>)
-                    } label: {
-                        Image(systemName: "person.circle")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 60)
-                    }
-                    .foregroundStyle(.black)
-                    .padding(.horizontal, 20)
+                        NavigationLink {
+                            PersonalInformationView(personalInfos: $personalInfo)
+                        } label: {
+                            Image(systemName: "person.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 60)
+                        }
+                        .foregroundStyle(.black)
+                        .padding(.horizontal, 20)
+                    
                 }
-                                                
+                
                 HStack {
                     ZStack {
                         Rectangle()
                             .fill(.darkGreen)
                             .frame(height: 50)
-                        .frame(width: 300)
+                            .frame(width: 300)
                         Text("After Breakfast")
                             .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
                             .bold()
@@ -68,7 +72,7 @@ struct TodayView: View {
                         Rectangle()
                             .fill(.darkGreen)
                             .frame(height: 50)
-                        .frame(width: 300)
+                            .frame(width: 300)
                         Text("After Lunch")
                             .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
                             .bold()
@@ -82,7 +86,7 @@ struct TodayView: View {
                         Rectangle()
                             .fill(.darkGreen)
                             .frame(height: 50)
-                        .frame(width: 300)
+                            .frame(width: 300)
                         Text("After Dinner")
                             .font(.custom("Helvetica", size: 30, relativeTo: .largeTitle))
                             .bold()
@@ -95,9 +99,9 @@ struct TodayView: View {
             }
         }
     }
+    }
 }
 
-#Preview {TodayView(tookMedication: .constant(true),
-                    medications: Binding.constant(exampleMedications),
-                    personalInfos: <#Binding<[PersonalInfo]>#>)
+#Preview {
+    TodayView()
                         }
