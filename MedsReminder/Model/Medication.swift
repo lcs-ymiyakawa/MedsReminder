@@ -15,6 +15,6 @@ struct Medication: Identifiable {
 }
 
 let exampleMedications: [Medication] = [
-    Medication(title: "Vitamine C", time: "Breakfast", description: "a"),
-    Medication(title: "Med2", time: "Lunch", description: "a")
+    Medication(title: "Vitamine C", time: "Breakfast", description: "Take it with water"),
+    Medication(title: "Methylphenidate", time: "Lunch", description: "Take it in 30 minutes after meal")
 ]
